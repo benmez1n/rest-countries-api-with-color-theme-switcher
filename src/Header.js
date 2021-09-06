@@ -1,7 +1,7 @@
 import { useState } from "react";
 const Header = () => {   
     const [theme,setTheme] = useState('light');
-    document.documentElement.className = theme;
+    document.documentElement.className = localStorage.getItem("themeStorage") ? localStorage.getItem("themeStorage"):theme;
     document.body.classList.remove("light")
     const handleSwitcher = () => {
         if(theme==="light"){
@@ -11,7 +11,8 @@ const Header = () => {
          setTheme("light")
          document.documentElement.className = theme
         }
-       }
+        localStorage.setItem("themeStorage",theme);
+    }
     return ( 
         <div className="header">
             <div className="container">
