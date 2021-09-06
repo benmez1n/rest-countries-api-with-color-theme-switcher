@@ -1,0 +1,230 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
+:root{
+  /*Font*/
+  --font-size-homepage : 14px;
+  --font-size-detail: 16px;
+  --font-normal : 300;
+  --font-medium : 600;
+  --font-bold :  800;
+  --font-family:"Nunito Sans";
+}
+*{box-sizing: border-box;margin:0;padding:0}
+.light{
+  --element-bg : hsl(0, 0%, 100%);
+  --main-bg :  hsl(0, 2%, 91%);
+  --txt : hsl(200, 15%, 8%);
+  --input:hsl(0, 0%, 52%);
+  --shadow : hsl(0, 1%, 78%);
+}
+.dark{
+  --element-bg :hsl(209, 23%, 22%);
+  --main-bg : hsl(207, 26%, 17%);
+  --txt : hsl(0, 0%, 100%);
+  --input:hsl(209, 23%, 22%);
+  --shadow : hsl(209, 25%, 23%);
+}
+body{
+  user-select: none;
+  color:var(--txt);
+  font-family: var(--font-family);
+  background-color: var(--main-bg);
+  font-size: var(--font-size-homepage) ;
+}
+h1{font-weight: var(--font-bold);}
+h2,h3{font-weight: var(--font-medium);}
+a{text-decoration: none;}
+.x{display:none}
+.loading{
+  position: fixed;
+  top:60%;
+  left:45%;
+}
+.header ,.listItem{background-color: var(--element-bg);}
+.container{width:1170px;margin :0 auto;}
+.header .container{
+  display:flex;
+  justify-content: space-between;
+  padding:20px 0;
+}
+.header span{
+  cursor: pointer;
+  display:flex;
+  margin-top:3px;
+  border-radius: 8px;
+  padding:12px 20px;
+  place-items: center;
+  text-transform: capitalize;
+  font-weight: var(--font-medium);
+  transition: background-color 1s ease;
+}
+.header span:hover{
+  background-color: var(--main-bg);
+}
+.header i{
+  font-size:1.3rem;
+  margin-right:10px
+}
+form{
+  display:flex;
+  justify-content: space-between;
+  margin-top:50px;
+}
+select,input{
+  background-color: var(--element-bg);
+  color:var(--txt);
+  border:none;
+  border-radius: 5px;
+  box-shadow: 2px -2px 4px var(--shadow),
+              -2px 2px 4px var(--shadow);
+}
+select:focus,input:focus{
+  outline:none;
+}
+.inputField{
+  width:35%;
+}
+.inputField i {
+  margin-left:-308px;
+  font-size: large;
+}
+input{
+  width:80%;
+  padding-left:50px;
+  height: 38px;
+}
+select{
+  font-size: large;
+  width:160px;
+  padding:0 10px;
+  cursor:pointer;
+}
+.countriesList{
+  margin: 70px 0;
+}
+
+.countriesList .container{
+  display:grid;
+  grid-template-columns: repeat(4,1fr);
+  gap : 60px 50px;
+}
+.listItem{
+  color:var(--txt);
+  display: flex;
+  flex-direction: column;
+  text-transform: capitalize;
+  padding-bottom:20px;
+  border-radius:8px;
+  overflow:hidden;
+  cursor: pointer;
+}
+.listItem:hover,
+.borderCountries .borders:hover,
+.back:hover{
+  transform: scale3d(1.1,1.1,1.1);
+}
+.listItem,
+.borderCountries .borders,
+.back{
+  transition: transform ease 1s;
+}
+.listItem .info{padding-left:15px;}
+.listItem .info div{
+  margin-bottom: 3px;
+}
+.listItem h2{
+  margin:15px 0;
+}
+.listItem h3{display: inline-block;margin-right:5px;}
+.countryPage{
+  font-size: var(--font-size-detail);
+}
+.back{
+  display: flex;
+  cursor: pointer;
+  font-size: 18px;
+  padding:0 20px;
+  width:120px;
+  height: 40px;
+  margin:50px 0;
+  font-weight: var(--font-medium);
+  border-radius: 8px;
+  place-items: center;
+  background-color: var(--element-bg);
+  box-shadow: 2px -2px 4px var(--shadow),
+              -2px 2px 4px var(--shadow);
+}
+.back i{margin-right:10px;}
+.countryPage a{
+  text-decoration: none;
+  color: var(--txt);
+}
+.country .container{
+  display:flex;
+}
+.country .flag{width:40%;}
+.flag img{
+  width:90%;
+}
+.countryInfo{
+  margin-top:20px;
+  padding-left:60px;
+  width:50%;
+}
+.countryInfo .name{margin-bottom:20px;}
+.countryInfo h3{
+  text-transform: capitalize;
+  display: inline-block;
+  margin-right:5px;
+  font-size:var(--font-size-detail)
+}
+.generalInfo{
+  display:grid;
+  grid-template-columns: repeat(2,1fr);
+  gap :100px;
+  margin-bottom:20px;
+}
+.generalInfo div div{
+  margin-bottom:8px;
+}
+.borderCountries .borders{
+  display: inline-block;
+  padding:4px;
+  background-color: var(--element-bg);
+  border: 1px solid var(--shadow);
+  margin-bottom:10px;
+}
+.borderCountries .borders:not(:last-child){margin-right:12px;}
+
+@media (max-width:769px){
+  .container{width:80%;}
+  .header h1{font-size: medium;margin-top:10px;}
+  .header span{margin-top:0}
+  form{
+    flex-direction: column;
+    height: 100px;
+    justify-content: space-between;
+  }
+  .inputField{
+    width:90%;
+    display: flex;
+  }
+  .inputField i{
+    margin-left:-95%;
+    margin-top:8px;
+  }
+  input{width:100%;}
+  select{
+    padding: 5px;
+  }
+  .countriesList .container{
+    grid-template-columns: repeat(1,auto);
+  }
+  .country .container{
+    flex-direction: column;
+  }
+  .country .flag{width:100%;text-align: center;}
+  .generalInfo{
+    grid-template-columns: repeat(1,1fr);
+    gap :20px;
+  }
+}
