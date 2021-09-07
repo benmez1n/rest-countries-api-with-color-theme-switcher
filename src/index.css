@@ -223,8 +223,13 @@ select{
     flex-direction: column;
   }
   .country .flag{width:100%;text-align: center;}
+  .countryInfo{
+    margin-top:20px;
+    padding-left:10px;
+    width:100%;
+  }
   .generalInfo{
     grid-template-columns: repeat(1,1fr);
-    gap :20px;
+    gap :20px 0;
   }
 }
