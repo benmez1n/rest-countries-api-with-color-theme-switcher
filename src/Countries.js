@@ -3,7 +3,7 @@ import {useEffect , useState } from 'react';
 import {  Link } from 'react-router-dom'
 let url;
 const Countries = ({filtra,input,numberWithCommas}) => {
-    url = input ? `https://restcountries.com/rest/v2/name/${input}` : "https://restcountries.com/rest/v2/all"
+    url = input ? `https://restcountries.com/v2/name/${input}` : "https://restcountries.com/v2/all"
     
     const {data,loading} = useFetch(url);
     const [countries,setCountries] = useState([]);

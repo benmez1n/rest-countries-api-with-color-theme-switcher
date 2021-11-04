@@ -3,7 +3,7 @@ import {  Link, useParams} from 'react-router-dom'
 import useFetch from './useFetch';
 const Country = ({numberWithCommas,getCountryName}) => {
     const countryName = useParams();
-    const {data,loading} = useFetch(`https://restcountries.com/rest/v2/name/${countryName.countryName}?fullText=true`);
+    const {data,loading} = useFetch(`https://restcountries.com/v2/name/${countryName.countryName}?fullText=true`);
     const [country,setCountry] = useState(data);
     useEffect(() => {
         setCountry(data);
