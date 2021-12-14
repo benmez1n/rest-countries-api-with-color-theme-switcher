@@ -15,7 +15,7 @@ function App() {
   const [inputField , setInputField ] = useState(undefined);
   const [search,setSearch] = useState(undefined);
   const [filtra,setFilter] = useState("All");
-  const {data} = useFetch("https://restcountries.eu/rest/v2/all")
+  const {data} = useFetch("https://restcountries.com/v2/all")
   const handleSubmit = (e) => {
       e.preventDefault();
       setSearch(inputField);

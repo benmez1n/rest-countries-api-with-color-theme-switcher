@@ -3,7 +3,7 @@ import {  Link, useParams} from 'react-router-dom'
 import useFetch from './useFetch';
 const Country = ({numberWithCommas,getCountryName}) => {
     const countryName = useParams();
-    const {data,loading} = useFetch(`https://restcountries.com/v3.1/name/${countryName}?fullText=true`);
+    const {data,loading} = useFetch(`https://restcountries.com/v2/name/${countryName.countryName}?fullText=true`);
     const [country,setCountry] = useState(data);
     useEffect(() => {
         setCountry(data);
@@ -28,7 +28,7 @@ const Country = ({numberWithCommas,getCountryName}) => {
                             </div>
                             <div className="generalInfo">
                                 <div className="geoInfo">
-                                    {country[0].nativeName && <div><h3>native name:</h3>{country[0].nativeName}</div>}
+                                {country[0].nativeName && <div><h3>native name:</h3>{country[0].nativeName}</div>}
                                     <div><h3>population:</h3>{numberWithCommas(country[0].population)}</div>
                                     {country[0].region && <div><h3>region:</h3>{country[0].region}</div>}
                                     {country[0].subregion && <div><h3>sub region:</h3>{country[0].subregion}</div>}

@@ -3,7 +3,7 @@ import {useEffect , useState } from 'react';
 import {  Link } from 'react-router-dom'
 let url;
 const Countries = ({filtra,input,numberWithCommas}) => {
-    url = input ? `https://restcountries.com/v3.1/name/${input}` : "https://restcountries.com/v3.1/all"
+    url = input ? `https://restcountries.com/v2/name/${input}` : "https://restcountries.com/v2/all"
     
     const {data,loading} = useFetch(url);
     const [countries,setCountries] = useState([]);
@@ -41,7 +41,7 @@ const Countries = ({filtra,input,numberWithCommas}) => {
                                     <h2>{name}</h2>
                                     <div><h3>population:</h3><span>{numberWithCommas(population)}</span></div>
                                     {region && <div><h3>region:</h3><span>{region}</span></div>}
-                                    {capital && <div><h3>capital:</h3><span>{capital}</span></div>}
+                                    {capital && <div><h3>capital:</h3><span>{capital[0]}</span></div>}
                                 </div>
                             </Link>
                         )
