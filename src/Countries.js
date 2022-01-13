@@ -41,7 +41,7 @@ const Countries = ({filtra,input,numberWithCommas}) => {
                                     <h2>{name}</h2>
                                     <div><h3>population:</h3><span>{numberWithCommas(population)}</span></div>
                                     {region && <div><h3>region:</h3><span>{region}</span></div>}
-                                    {capital && <div><h3>capital:</h3><span>{capital[0]}</span></div>}
+                                    {capital && <div><h3>capital:</h3><span>{capital}</span></div>}
                                 </div>
                             </Link>
                         )
